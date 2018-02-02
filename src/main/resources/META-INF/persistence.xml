@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="WebShop_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+  <persistence-unit name="WebShop_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL"  class="java.net.URI" id="dbUrl">
+    <constructor-arg value="#{systemEnvironment['mysql://b4f786cb5e6fb3:39b750af@eu-cdbr-west-02.cleardb.net/heroku_2e32f1f5d7f29ce?reconnect=true']}"/>
+      <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     
     <class>model.Product</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="heroku_2e32f1f5d7f29ce?reconnect=true"/>
-      <property name="javax.persistence.jdbc.user" value="b4f786cb5e6fb3"/>
-      <property name="javax.persistence.jdbc.driver" value="eu-cdbr-west-02.cleardb.net"/>
-      <property name="javax.persistence.jdbc.password" value="39b750af"/>
+    <properties   id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+      <property name="url" value="#{'jdbc:mysql://' + @dbUrl.getHost() + @dbUrl.getPath()}"/>
+      <property name="username" value="#{@dbUrl.getUserInfo().split(':')[0]}"/>
+     
+      <property name="password" value="#{@dbUrl.getUserInfo().split(':')[1]}"/>
     
     </properties>
   </persistence-unit>
