@@ -7,10 +7,10 @@
     <class>model.Product</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties   id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-      <property name="url" value="#{'jdbc:mysql://' + @dbUrl.getHost() + @dbUrl.getPath()}"/>
-      <property name="username" value="#{@dbUrl.getUserInfo().split(':')[0]}"/>
+      <property name="url" value="mysql://b4f786cb5e6fb3:39b750af@eu-cdbr-west-02.cleardb.net/heroku_2e32f1f5d7f29ce?reconnect=true"/>
+      <property name="username" value="b4f786cb5e6fb3"/>
      
-      <property name="password" value="#{@dbUrl.getUserInfo().split(':')[1]}"/>
+      <property name="password" value="39b750af"/>
     
     </properties>
   </persistence-unit>
