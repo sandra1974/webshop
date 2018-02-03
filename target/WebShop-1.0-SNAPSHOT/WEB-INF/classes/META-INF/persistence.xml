@@ -11,13 +11,13 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-    <properties>
+    
       <property name="url" value="#{'jdbc:mysql://'+@dbUrl.getHost()+@dbUrl.getPath()}"/>
       <property name="username" value="#{@dbUrl.getUserInfo().split(':')[0]}"/>
       
       <property name="password" value="#{@dbUrl.getUserInfo().split(':')[1]}"/>
      
-    </properties>
+    
     </bean>
   </persistence-unit>
 </persistence>
