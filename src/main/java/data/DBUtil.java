@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
 public class DBUtil {
     
      private static final EntityManagerFactory emf =
-            Persistence.createEntityManagerFactory("WebShop_war_1.0-SNAPSHOTPU");
+            Persistence.createEntityManagerFactory("com.itextpdf_WebShop_war_1.0-SNAPSHOTPU");
     
     public static EntityManagerFactory getEmFactory() {
         return emf;

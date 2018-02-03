@@ -28,9 +28,10 @@ body {font-family: "Lato", sans-serif}
         
     </head>
     <body>
-     <sql:setDataSource var="dbsource" 
+    <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://eu-cdbr-west-02.cleardb.net:3306"
-                           user="b4f786cb5e6fb3"  password="39b750"/>
+                           user="b4f786cb5e6fb3"  password="39b750af"/>
+    
  
         <sql:query dataSource="${dbsource}" var="products">
             SELECT * from heroku_2e32f1f5d7f29ce.product where name="nice jewerly";

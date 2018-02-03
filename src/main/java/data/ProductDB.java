@@ -33,7 +33,7 @@ public class ProductDB {
             em.close();
         }
 
-        return (Product) result;
+        return result;
     }
 
 //    public static Product selectProduct(long productId) {

@@ -14,18 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
-    <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.4.7.RELEASE</version>
-</parent>
+    
     
     <dependencies>
         
-        <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+        
         
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -88,10 +81,7 @@
     <build>
         <plugins>
             
-            <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
+           
             
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -128,12 +118,7 @@
                             <silent>true</silent>
                             <artifactItems>
                                 
-                                 <artifactItem>
-                                    <groupId>com.github.jsimone</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>8.0.30.2</version>
-                                    <destFileName>webapp-runner.jar</destFileName>
-                                    </artifactItem>
+                                 
                                 
                                 
                                 <artifactItem>
