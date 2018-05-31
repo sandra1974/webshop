@@ -1,0 +1,11 @@
+create table category (
+id int not null auto_increment,
+name varchar(100) null,
+primary key(id));
+
+create table product(
+id int not null auto_increment,
+name varchar(100) null,
+description varchar(100) null,
+price double null,
+primary key(id));
